@@ -132,7 +132,7 @@ var styleContent = `
 color: rgb(30,152,255);
 `
 var title1 = 'XKの相册'
-var title2 = `版权所有-侵权必究`
+var title2 = `版权所有`
 var content = `
 主页:  https://www.xukaiyyds.cn
 地址:  https://github.com/kaibazhidao66/photo
