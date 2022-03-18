@@ -37,7 +37,7 @@ if (getStyle(el[i], "cursor") == "pointer")
 this.pt.push(el[i].outerHTML);
 document.body.appendChild((this.scr = document.createElement("style")));
 this.scr.innerHTML =
-`* {cursor: url("https://786b-xkbk-3891e3-1307717792.tcb.qcloud.la/blog/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/mouse.png?sign=b337523ab0ff7b4b048a5ab08dc89da4&t=1645252887") 4 4, auto}`;
+`* {cursor: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/blog/mouse.png") 4 4, auto}`;
 }
 refresh() {
 this.scr.remove();
