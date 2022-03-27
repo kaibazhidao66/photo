@@ -37,7 +37,7 @@ if (getStyle(el[i], "cursor") == "pointer")
 this.pt.push(el[i].outerHTML);
 document.body.appendChild((this.scr = document.createElement("style")));
 this.scr.innerHTML =
-`* {cursor: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/blog/mouse.png") 4 4, auto}`;
+`* {cursor: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/cur/mouse.cur") 4 4, auto}`;
 }
 refresh() {
 this.scr.remove();
@@ -101,22 +101,92 @@ window.addEventListener('load', function () {
     });
 }
 
-/* 屏蔽右键 */
-document.addEventListener("contextmenu", function () {
-    return false;
-});
-document.oncontextmenu = function () {
-    return false;
+// 点击特效
+onload = function() {
+    var click_cnt = 0;
+    var $html = document.getElementsByTagName("html")[0];
+    var $body = document.getElementsByTagName("body")[0];
+    $html.onclick = function(e) {
+        var $elem = document.createElement("b");
+        $elem.style.color = "#E94F06";
+        $elem.style.zIndex = 9999;
+        $elem.style.position = "absolute";
+        $elem.style.select = "none";
+        var x = e.pageX;
+        var y = e.pageY;
+        $elem.style.left = (x - 10) + "px";
+        $elem.style.top = (y - 20) + "px";
+        clearInterval(anim);
+        switch (++click_cnt) {
+            case 10:
+                $elem.innerText = "OωO";
+                break;
+            case 20:
+                $elem.innerText = "(๑•́ ∀ •̀๑)";
+                break;
+            case 30:
+                $elem.innerText = "(๑•́ ₃ •̀๑)";
+                break;
+            case 40:
+                $elem.innerText = "(๑•̀_•́๑)";
+                break;
+            case 50:
+                $elem.innerText = "（￣へ￣）";
+                break;
+            case 60:
+                $elem.innerText = "(╯°口°)╯(┴—┴";
+                break;
+            case 70:
+                $elem.innerText = "૮( ᵒ̌皿ᵒ̌ )ა";
+                break;
+            case 80:
+                $elem.innerText = "╮(｡>口<｡)╭";
+                break;
+            case 90:
+                $elem.innerText = "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃";
+                break;
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+                $elem.innerText = "(ꐦ°᷄д°᷅)";
+                break;
+            default:
+                $elem.innerText = "❤";
+                break;
+        }
+        $elem.style.fontSize = Math.random() * 10 + 8 + "px";
+        var increase = 0;
+        var anim;
+        setTimeout(function() {
+            anim = setInterval(function() {
+                if (++increase == 150) {
+                    clearInterval(anim);
+                    $body.removeChild($elem);
+                }
+                $elem.style.top = y - 20 - increase + "px";
+                $elem.style.opacity = (150 - increase) / 120;
+            }, 8);
+        }, 70);
+        $body.appendChild($elem);
+    };
 };
 
-// 禁止 F12
-document.onkeydown = function (event) {
-    if (window.event && window.event.keyCode === 123) {
-        event.keyCode = 0;
-        event.returnValue = false;
-    return false;
-    }
+/* 禁止右键，F12，F5 */
+function unmouse(){
+	document.oncontextmenu = new Function("return false;");
+	document.onkeydown = document.onkeyup = document.onkeypress = function(event) {
+		var e = event || window.event || arguments.callee.caller.arguments[0];
+		if (e && (e.keyCode == 123 || (e.keyCode == 116 && e.type!='keypress'))) 
+		{
+			e.returnValue = false;
+			return (false);
+		}
+	}
 }
+unmouse()
 
 //控制台输出
 var styleTitle1 = `
