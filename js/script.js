@@ -37,7 +37,7 @@ if (getStyle(el[i], "cursor") == "pointer")
 this.pt.push(el[i].outerHTML);
 document.body.appendChild((this.scr = document.createElement("style")));
 this.scr.innerHTML =
-`* {cursor: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/cur/mouse.cur") 4 4, auto}`;
+`* {cursor: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/cur/a11.cur") 4 4, auto}`;
 }
 refresh() {
 this.scr.remove();

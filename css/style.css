@@ -20,6 +20,9 @@ ul {
     margin: 0;
     padding: 0;
 }
+a:hover {
+    cursor: url(https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/cur/a22.cur), alias;
+}
 
 /* 相册卡片 */
 .card-image {
