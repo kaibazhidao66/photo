@@ -14,7 +14,7 @@
 </head>
 
 <body class="home">
-	<div class="htmleaf-container">
+    <div class="htmleaf-container">
 		<header class="htmleaf-header">
 			<div class="htmleaf-links">
                 <a href="./life">生活</a>
@@ -39,7 +39,17 @@
                 </li> -->
             </ul>
         </div>
-
+        <!-- 加载动画 -->
+        <div class="loader"></div>
+        <script>
+            document.onreadystatechange = function () {
+                if (document.readyState == "complete") {
+                    $(".loader").hide();
+                    $('body').css('scroll');
+                }
+            }
+        </script>
+        <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
         <script src="./dist/js/lightgallery.js"></script>
         <script src="./js/lg-autoplay.js"></script>
         <script src="./js/script.js"></script>
