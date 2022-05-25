@@ -49,7 +49,7 @@ body{
 	font-weight: 500;
 	font-size: 1.05em;
 	font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-	background-image: url("https://cdn.jsdelivr.net/gh/kaibazhidao66/tcb/blog/background.png"), url("https://img.imsyy.top/bg/light/leaves-pattern.png");
+	background-image: url("https://fastly.jsdelivr.net/gh/kaibazhidao66/tcb/photo/background.png"), url("https://img.imsyy.top/bg/light/leaves-pattern.png");
 }
 a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
 a:hover,a:focus{color:#e58a8a;text-decoration: none;}
